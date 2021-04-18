@@ -7,6 +7,7 @@ $kaldi-red: #D64000;
 $kaldi-red-invert: #fff;
 
 $twala-purple: #9E57E4;
+$mulled-wine: #4d4a6d;
 
 $primary: $twala-purple;
 $primary-invert: $kaldi-red-invert;
@@ -167,4 +168,32 @@ $menu-label-color: $white-ter;
     max-width: 70%;
     margin: 0 0 1em;
 }
+}
+
+.footer-list-heading {
+  color: $mulled-wine;
+}
+
+.footer-navbar-item:active {
+  color: $twala-purple !important;
+}
+
+.footer-navbar-item:focus {
+  color: $twala-purple !important;
+}
+
+.social-media-link {
+  padding: 12px !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+  margin: 0px 4px 0px 0px;
+  width: unset !important;
+  height: unset !important;
+  vertical-align: unset !important;
+  display: unset !important;
+}
+
+.social-media-container {
+  display: flex;
+  align-items: flex-start;
 }
