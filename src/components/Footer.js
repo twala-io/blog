@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { URL_HELPERS } from "../utils/urls";
 import Icon from "./icon";
-
+import logo from "../img/twala-logo-white.png";
 import "./footer.scss";
 
 const Footer = class extends React.Component {
@@ -11,6 +11,11 @@ const Footer = class extends React.Component {
       <footer className="footer-section">
         <div className="footer-wrapper">
           <div className="footer-left">
+            <img
+              src={logo}
+              alt="twala"
+              style={{ width: "112px", height: "36px" }}
+            />
             <div className="socmed-links">
               <a className="facebook" href="https://www.facebook.com/twalaio">
                 <Icon className="icon-facebook" size={20} />
@@ -77,9 +82,15 @@ const Footer = class extends React.Component {
           <span className="copyright">© 2021 Twala, Inc.</span>
           <div />
           <div className="policy-wrapper">
-            <Link to={URL_HELPERS.terms}>Terms of Use</Link>
-            <Link to={URL_HELPERS.privacy}>Privacy Policy</Link>
-            <Link to={URL_HELPERS.cookie}>Cookie Policy</Link>
+            <Link className="link" to={URL_HELPERS.terms}>
+              Terms of Use
+            </Link>
+            <Link className="link" to={URL_HELPERS.privacy}>
+              Privacy Policy
+            </Link>
+            <Link className="link" to={URL_HELPERS.cookie}>
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </footer>
