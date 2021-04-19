@@ -1,0 +1,179 @@
+@mixin for-phone {
+  @media (max-width: 720px) { @content; }
+}
+@mixin for-tablet {
+  @media (max-width: 900px) { @content; }
+}
+@mixin for-laptop {
+  @media (max-width: 999px) { @content; }
+}
+@mixin for-desktop {
+  @media (min-width: 1000px) { @content; }
+}
+@mixin for-retina {
+  @media (min-width: 1800px) { @content; }
+}
+// Font Weight
+$normal: 400;
+$medium: 500;
+$bold: 700;
+
+// Colors
+$lilac: #ECEBF9;
+$white: #FFFFFF;
+$athens-gray: #F4F4F5;
+$mercury: #E5E5E5;
+$mischka: #D7D8DF;
+$black: #0E0C22;
+$purple: #9E57E4;
+$waterloo: #818094;
+$mulled-wine: #4D4A6D;
+$porcelain: #F7F8F9;
+$graysuit: #BEBDCB;
+$mirage: #1E1C36;
+$haiti: #141131;
+$pad: 8px;
+$transition: all cubic-bezier(.62,.01,.01,1) 300ms;
+
+.footer-section {
+  & {
+    background-color: $black;
+    padding: 148px 10%;
+    @include for-phone {
+      padding: $pad*10 $pad*5;
+    }
+  }
+  &.maxed > .footer-wrapper,
+  &.maxed > .meta-info {
+    max-width: none;
+  }
+  & > .footer-wrapper {
+    padding-bottom: $pad*4;
+    @include for-phone {
+      flex-direction: column-reverse;
+    }
+  }
+  & > .footer-wrapper,
+  & > .meta-info {
+
+    margin: 0 auto;
+    display: flex;
+  }
+  & > .meta-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid $mirage;
+    padding-top: $pad*4;
+    color: $waterloo;
+    font-size: ms(0);
+    @include for-phone {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  & > .meta-info > .brand-guidelines {
+    margin: 0 auto;
+    @include for-phone {
+      display: none;
+    }
+  }
+  & > .meta-info > .policy-wrapper {
+    margin-left: auto;
+    @include for-phone {
+      white-space: nowrap;
+    }
+  }
+  & .footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 24px;
+  }
+  & .footer-left > .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    max-width: $pad*35;
+    position: relative;
+    @include for-phone {
+      max-width: 100%;
+    }
+  }
+  & .footer-right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $pad*2 $pad*2;
+    @include for-phone {
+      grid-gap: $pad*2;
+      margin-bottom: $pad*5;
+    }
+  }
+  & .footer-right > a {
+    color: $white;
+    font-size: ms(1);
+    font-weight: $normal;
+  }
+  & .footer-right > .preamble {
+    font-size: ms(0);
+    color: $mulled-wine;
+  }
+  & .policy-wrapper > a {
+    margin-left: $pad*2;
+  }
+  & .subscribe-form > .label {
+    font-size: ms(0);
+    color: $mulled-wine;
+    font-weight: $normal;
+    margin-bottom: $pad;
+  }
+  & .subscribe-form > .input {
+    font-size: ms(1);
+    color: $white;
+    font-weight: $normal;
+    margin-bottom: $pad/2;
+    padding: $pad $pad*10 $pad $pad*2;
+    background-color: $haiti;
+    border: none;
+  }
+  & .subscribe-form > .button {
+    font-size: ms(1);
+    color: $white;
+    font-weight: $normal;
+    background-color: $purple;
+    border: none;
+    top: 26px;
+    right: 0;
+    position: absolute;
+    height: 37px;
+    padding: $pad $pad*2;
+  }
+  & .subscribe-form > .input::placeholder {
+    color: $waterloo;
+  }
+  & .socmed-links {
+    display: flex;
+    flex-direction: row;
+    @include for-phone {
+      justify-content: space-between;
+      margin: $pad*2 0;
+    }
+  }
+  & .socmed-links > a {
+    padding: $pad*2;
+    border-radius: $pad*10;
+    border: 1px solid $mirage;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    transition: $transition;
+    cursor: pointer;
+    &:hover, &:focus {
+      border: 1px solid $purple;
+      transition: $transition;
+    }
+  }
+  & .socmed-links > a + a {
+    margin-left: $pad*2;
+  }
+}

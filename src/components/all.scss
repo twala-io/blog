@@ -197,3 +197,38 @@ $menu-label-color: $white-ter;
   display: flex;
   align-items: flex-start;
 }
+
+.navbar-nav {
+  position: sticky !important;
+  top: 0 !important;
+  //box-shadow: 0 2px 2px 0 rgb(15 13 35 / 3%);
+}
+
+.navbar-container {
+  padding: 12px 0 !important;
+}
+
+.navbar-nav-menu {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+.navbar-text {
+  font-size: 14.4px !important;
+  color: #818094 !important;
+  font-weight: 500 !important;
+  transition: all .3s cubic-bezier(.62,.01,.01,1) !important;
+}
+
+.navbar-link:focus {
+  color: $twala-purple !important;
+}
+
+.navbar-link:active {
+  color: $twala-purple !important;
+}
+
+.navbar-link:hover {
+  color: $twala-purple !important;
+}
